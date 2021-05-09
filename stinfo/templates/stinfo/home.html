@@ -1,0 +1,95 @@
+{% extends "stinfo/base.html" %}
+
+{% block content %}
+    <body>
+        <div class = "container" id = "centered">
+            <h1>Welcome back!</h1>
+			<br/>
+            <h3>Current User: <em><b>{{ request.session.username }}</b></em></h3>
+        </div>
+
+		<br/><br/>
+
+		<div class = "container">
+			<div class = "row">
+				<div class = "col-md-4">
+					<div class = "container">
+						<div class = "card">
+							<img class = "card-img-top" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fgrad.ncsu.edu%2Fwp-content%2Fuploads%2F2018%2F04%2FDavid-M-web-e1523374157920.jpg&f=1&nofb=1"/>
+							<div class = "card-body">
+								<h4><b>Students Enrolled:</b> {{ stCount }}</h4>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class = "col-md-4">
+					<div class = "container">
+						<div class = "card">
+							<img class = "card-img-top" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fonline-distance.ncsu.edu%2Fwp-content%2Fuploads%2F2017%2F07%2FGarden-Reading-Room-848x477.jpg&f=1&nofb=1"/>
+							<div class = "card-body">
+								<h4><b>Average GPA: </b>{{ gpaAverage | floatformat:2 }}</h4>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class = "col-md-4">
+					<div class = "container">
+						<div class = "card">
+							<img class = "card-img-top" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpoole.ncsu.edu%2Fwp-content%2Fuploads%2F2019%2F10%2FDSC00003-2.jpg&f=1&nofb=1"/>
+							<div class = "card-body">
+								<h4><b>Number of Courses: </b>{{ stCount }}</h4>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<br/><br/>
+
+			<div class = "row">
+				<div class = "col-md-3">
+					<div class = "container">
+						<div class = "card">
+							<img class = "card-img-top" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fgrad.ncsu.edu%2Fwp-content%2Fuploads%2F2015%2F08%2Fwolf_crowd_lg-e1438694752626.jpg&f=1&nofb=1"/>
+							<div class = "card-body">
+								<h4><b>Number of Freshmen: </b>{{ freshCount }}</h4>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class = "col-md-3">
+					<div class = "container">
+						<div class = "card">
+							<img class = "card-img-top" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fnews.ncsu.edu%2Fwp-content%2Fuploads%2F2017%2F08%2Fwolfpack-welcome-home-848x477.jpg&f=1&nofb=1"/>
+							<div class = "card-body">
+								<h4><b>Number of Sophomores: </b>{{ sophCount }}</h4>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class = "col-md-3">
+					<div class = "container">
+						<div class = "card">
+							<img class = "card-img-top" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fgetwallpapers.com%2Fwallpaper%2Ffull%2F6%2F8%2F7%2F146723.jpg&f=1&nofb=1"/>
+							<div class = "card-body">
+								<h4><b>Number of Juniors: </b>{{ jrCount }}</h4>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class = "col-md-3">
+					<div class = "container">
+						<div class = "card">
+							<img class = "card-img-top" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fnews.ncsu.edu%2Fwp-content%2Fuploads%2F2015%2F12%2Fnewbackdrop.jpg&f=1&nofb=1"/>
+							<div class = "card-body">
+								<h4><b>Number of Seniors: </b>{{ seniorCount }}</h4>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+    </body>
+
+{% endblock %}

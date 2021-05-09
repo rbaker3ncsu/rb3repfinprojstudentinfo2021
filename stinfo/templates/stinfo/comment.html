@@ -1,0 +1,68 @@
+{% extends "stinfo/base.html" %}
+
+{% block content %}
+    <body>
+        <div class = "container" id = "centered">
+            <h1>Comment Page</h1>
+			<br/>
+            <p>Submit any questions, concerns, or suggestions to improve the user interface:</p>
+        </div>
+
+		<br/>
+
+		<div class = "container">
+
+			<div class = "form-group">
+				<label for = "emailid">Email ID</label>
+				<input type = "email" class = "form-control" id = "emailid" placeholder = "Enter your email"/>
+			</div>
+			<div class = "form-group">
+				<label for = "comment">Comment</label>
+				<input type = "text" class = "form-control" id = "comment" placeholder = "Type a comment..."/>
+			</div>
+
+			<br/><br/>
+
+			<div class = "logbutton">
+				<button type = "submit" class = "btn btn-dark" id = "btnsubmit">Submit</button>
+			</div>
+		</div>
+
+<!----SCRIPT-------------------------------------------------------------->
+
+		<script>
+
+			<!--capture email and comment info, send data-->
+			$(document).ready(function(){
+
+				<!--event. when the button is clicked, something happens.-->
+				$('#btnsubmit').click(function(){
+
+					$.ajax({
+
+						<!--url endpoint: where to send data?-->
+						url: "{% url 'savedata' %}",
+						<!--store datapoints in this data object-->
+						data: {
+							email: $('#emailid').val(),
+							comment: $('#comment').val(),
+						},
+						<!--success function-->
+						success: function(){
+							alert("Message sent.")
+							console.log("success")
+						},
+
+					});
+
+				});
+
+			});
+
+
+
+		</script>
+
+    </body>
+
+{% endblock %}

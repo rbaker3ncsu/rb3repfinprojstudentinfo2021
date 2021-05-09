@@ -1,0 +1,48 @@
+* {
+    color: purple;
+	font-family:monospace;
+}
+
+.logobackground{
+	background-color: #3a6287;
+	background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsustainability.ncsu.edu%2Fmultisite%2Fwp-content%2Fuploads%2F2017%2F05%2Fcampus-grounds-1500x539.jpg&f=1&nofb=1');
+	text-align: center;
+	background-size: 100%;
+
+}
+
+#centered{
+	text-align: center;
+}
+
+table{
+	text-align:center;
+}
+
+#loginbutton{
+	text-align: center;
+}
+
+body{
+
+}
+
+#nav{
+
+}
+
+.logbutton{
+	text-align:center;
+}
+
+#toptext{
+	vertical-align: top;
+}
+
+#logcolored{
+	color: #d9dbc5;
+}
+
+h1{
+	font-weight: bold;
+}

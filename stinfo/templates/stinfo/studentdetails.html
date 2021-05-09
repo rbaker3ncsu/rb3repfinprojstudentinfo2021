@@ -1,0 +1,58 @@
+{% extends "stinfo/base.html" %}
+
+{% block content %}
+    <body>
+        <div class = "container" id = "centered">
+            <h1>Student Details Table</h1>
+			<br/>
+            <p>All students are listed below.</p>
+        </div>
+
+		<br/>
+
+        <div class = 'container'>
+            <table class = "table table-info table-striped">
+                <thead>
+                    <tr>
+                        <th>Student ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Major</th>
+                        <th>Year</th>
+                        <th>GPA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in stdata %}
+                        <tr>
+                            <td>{{ row.studentId }}</td>
+                            <td>{{ row.first }}</td>
+                            <td>{{ row.last }}</td>
+                            <td>{{ row.major }}</td>
+                            <td>{{ row.year }}</td>
+                            <td>{{ row.gpa | floatformat:2 }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <div class = "pagination">
+                <span class = "step-links">
+                    {% if stdata.has_previous %}
+                        <a href = "?page=1">&laquo; First</a>
+                        <a href = "?page={{ stdata.previous_page_number }}">Previous</a>
+                    {% endif %}
+                    <span class = "current">
+                        Page {{ stdata.number }} of {{ stdata.paginator.num_pages }}
+                    </span>
+                    {% if stdata.has_next %}
+                        <a href = "?page={{ stdata.next_page_number }}">Next</a>
+                        <a href = "?page={{ stdata.paginator.num_pages }}">Last &raquo</a>
+                    {% endif %}
+                </span>
+            </div>
+
+        </div>
+
+    </body>
+{% endblock %}

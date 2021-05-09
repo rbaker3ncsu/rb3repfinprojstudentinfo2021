@@ -1,0 +1,27 @@
+{% extends "stinfo/base.html" %}
+
+{% block content %}
+    <body>
+		<br/>
+        <div class = "container" id = "centered">
+            <h1>Login Page</h1>
+            <p>Please enter your username and password.</p>
+        </div>
+		<br/>
+
+		<div class = "container">
+			<form method = "post" action="{% url 'login' %}">
+				{% csrf_token %}
+				<table class = "table table-info">
+					{{ form }}
+				</table>
+				<div class = "container" id = loginbutton>
+					<input type = "submit" value = "Login"/>
+				</div>
+
+			</form>
+		</div>
+
+    </body>
+
+{% endblock %}
